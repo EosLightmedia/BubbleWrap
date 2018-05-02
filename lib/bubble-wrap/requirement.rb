@@ -51,7 +51,7 @@ module BubbleWrap
 
       attr_accessor :paths
 
-      def scan(caller_location, file_spec, &block)
+      def scan_path(caller_location, file_spec, &block)
         root = convert_caller_to_root_path caller_location
         self.paths ||= {}
         Dir.glob(File.expand_path(file_spec, root)).each do |file|

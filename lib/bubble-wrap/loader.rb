@@ -21,7 +21,7 @@ unless defined?(BubbleWrap::LOADER_PRESENT)
     end
 
     def require(file_spec, &block)
-      Requirement.scan(caller.first, file_spec, &block)
+      Requirement.scan_path(caller.first, file_spec, &block)
     end
 
     def require_ios(requirement = nil, &callback)
