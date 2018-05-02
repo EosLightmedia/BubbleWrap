@@ -34,7 +34,7 @@ class AppDelegate
   def fetch_ip
     @button.title = "Loading"
     BW::HTTP.get("http://jsonip.com") do |response|
-      ip = BW::JSON.parse(response.body.to_str)["ip"]
+      ip = BW::JSON.parse_json(response.body.to_str)["ip"]
       @label.stringValue = ip
       @button.title = "Find IP"
     end
